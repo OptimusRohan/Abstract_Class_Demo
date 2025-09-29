@@ -16,8 +16,19 @@ public enum VehicleTypes {
         return displayName;
     }
 
+    // toString with tabCount for printing in a clean way
+    public String toString(int tabCount) {
+        String tabs = "\t".repeat(tabCount);
+        StringBuilder sb = new StringBuilder();
+        sb.append(tabs)
+            .append("Vehicle Category: ")
+            .append(displayName)
+            .append("\n");
+        return sb.toString();
+    }
+    // call the toString with 0 tabs
     @Override
     public String toString() {
-        return displayName;
+        return toString(0);
     }
 }
