@@ -3,8 +3,8 @@ package io.github.OptimusRohan.dmvinfo.passenger.ford;
 public enum Models {
     F150("F-150"),
     MUSTANG("Mustang"),
-    FOCUS("Focus"),
-    ESCAPE("Escape");
+    ESCAPE("Escape"),
+    FOCUS("Focus");
 
     private final String displayName;
 
