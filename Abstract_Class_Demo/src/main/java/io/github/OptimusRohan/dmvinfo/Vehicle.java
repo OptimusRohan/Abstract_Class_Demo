@@ -26,10 +26,27 @@ public abstract class Vehicle {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Vehicle Information:\n");
-        sb.append("VIN: ").append(this.vin).append("\n");
-        sb.append("Manufacture Year: ").append(this.manufactureYear).append("\n");
-        sb.append("Vehicle Type: ").append(this.vehicleType).append("\n");
+        sb.append("VIN: ").append(vin).append("\n");
+        sb.append("Manufacture Year: ").append(manufactureYear).append("\n");
+        sb.append(vehicleType);
         return sb.toString();
     }
 
+
+    protected int toString(int tabLevel, StringBuilder sb) {
+        String tabs = "\t".repeat(tabLevel);
+        sb.append(tabs)
+                .append("Vehicle Information:\n");
+        String newTabs = "\t".repeat(tabLevel + 1);
+        sb.append(newTabs)
+                .append("VIN: ")
+                .append(vin)
+                .append("\n");
+        sb.append(newTabs)
+                .append("Manufacture Year: ")
+                .append(manufactureYear)
+                .append("\n");
+        sb.append(vehicleType.toString(tabLevel + 1));
+        return tabLevel + 1;
+    }
 }
